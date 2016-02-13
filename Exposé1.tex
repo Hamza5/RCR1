@@ -5,8 +5,10 @@
 \usepackage{graphicx}
 \usepackage{lmodern}
 \usepackage[hidelinks]{hyperref}
+\usepackage{amsthm}
 \author{Hamza Abbad}
 \title{Les modes de représentation des connaissances}
+\newtheorem{example}{Exemple}
 \begin{document}
 \maketitle
 \chapter{\'Etat de l'art}
@@ -25,9 +27,40 @@ donc nous allons discuter les types principaux de modèles qui sont :
 \item Connaissances héritables
 \item Connaissances inférentielles
 \item Connaissances déclaratives
-\item Connaissances procédurales
+\item Connaissances procédurales\cite{KRC}
 \end{itemize}
-\cite{KRC}
+
+\chapter{Modèles de représentation des connaissances}
+\section{Modèle de connaissances relationnelles}
+Ce type de représentation associe les éléments d'un domaine avec ceux de l'autre en utilisant les attributs d'un objet et
+ses valeurs. Les réalités sont stockés sous forme de correspondances des éléments entre les domaines. Ce modèle n'est pas
+généralement efficace pour l'inférence.\cite{KRC}
+\begin{example}
+Un exemple simple d'une représentation relationnelle
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Utilisateur & e-mail & domaine \\
+\hline
+Fayçal & lan@example.com & RT \\
+\hline
+Sohayb & cmpl@example.com & IA \\
+\hline
+Fadi & fnct@example.com & DL \\
+\hline
+Selman & exinf@example.com & IA \\
+\hline
+Sofian & wlan@example.com & RT \\
+\hline
+\end{tabular}
+\end{table}
+En utilisant cette représentation on peut répondre directement à la question "Qui sont les utilisateurs du domaine IA ?"
+mais pas la question "Quel est le domaine qui a le moins d'utilisateurs ?" (sauf si on définit une procédure
+pour faire cela).
+\end{example}
+
 
 \begin{thebibliography}{9}
 \bibitem{WKR}
