@@ -1,0 +1,5 @@
+# Ignore all
+*
+# But not needed file types
+!.gitignore
+!*.tex
