@@ -61,6 +61,43 @@ mais pas la question "Quel est le domaine qui a le moins d'utilisateurs ?" (sauf
 pour faire cela).
 \end{example}
 
+\section{Modèles de connaissances héritables}
+Dans ce type les éléments de connaissances héritent leurs attributs à partir de leurs parents. Les éléments fils
+peuvent définir leurs propres attributs et redéfinir ceux de leurs parents. L'héritage est une forme importante
+d'inférence mais pas suffisante seule, il faut qu'elle soit renforcé par d'autres mécanismes d'inférence.
+Une des représentations des connaissances héritables les plus utilisés est \emph{les réseaux sémantiques}.\cite{KRC}
+
+\begin{example}
+Ci-dessous est une représentation en utilisant les réseaux sémantiques:
+
+\includegraphics[scale=0.55]{pictures/reseau_semantique}
+
+Les noeuds représentent les entitées de la connaissance et les relations entre ces noeuds sont les attributs.
+Il y a des relations spéciales comme \texttt{est un} représentant l'héritage et \texttt{instance} qui
+représente que le noeud fils est un objet de la classe représentée par le noeud parent.
+\end{example}
+
+\section{Modèles de connaissances inférentielles}
+Dans ce type de représentation des nouvelles connaissances sont générées à partir de celles existantes.
+Les connaissances générées ne dépendent plus des connaissances originales pour qu'elles soient valides, mais
+il se peut qu'elles les nécessitent pour plus d'inférence.\cite{KRC} La logique propositionnelle et celle de
+prédicats utilisent ce type de connaissances.
+
+\begin{example}
+Nous avons les propositions suivantes :
+\begin{enumerate}
+\item \textbf{U(x)} : \textbf{x} est un Ultrabook
+\item \textbf{E(x)} : Le diamètre de l'écran de \textbf{x} est au plus 13.3".
+\item \textbf{P(x)} : Les performances de \textbf{x} sont élevés.
+\item \textbf{S(x)} : $ E(x) \wedge P(x) \rightarrow U(x) $
+\item \textbf{D} : Le diamètre d'écran de Dell XPS 13 est 13.3".
+\item \textbf{C} : Les performances de Dell XPS 13 sont élevés.
+\end{enumerate}
+A partir des propositions précédentes on peut déduire la conclusion suivante :
+\textbf{L} : "Dell XPS 13 est un Ultrabook"  en utilisant la logique des prédicats comme suit :
+De \textbf{D} on sait que \textbf{E(Dell XPS 13)} = vrai, et à partir de \textbf{C} on a \textbf{P(Dell XPS 13)} = vrai
+alors à partir de ces propositions et de \textbf{S(x)} on peut déduire que \textbf{U(Dell XPS 13)} = vrai
+\end{example}
 
 \begin{thebibliography}{9}
 \bibitem{WKR}
