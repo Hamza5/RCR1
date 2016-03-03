@@ -3,3 +3,6 @@
 # But not needed file types
 !.gitignore
 !*.tex
+!TP/
+!TP/**
+TP/**/*.exe
