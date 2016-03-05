@@ -9,12 +9,12 @@
 
 int main(int argc, char * argv[]){
 	if (argc != 3) {
-		fprintf(stderr, "Usage : %s <base_de_connaissance.cnf> <formule_atomic(entier)>\n", argv[0]);
+		fprintf(stderr, "Usage : %s <base_de_connaissance.cnf> <littéral(entier)>\n", argv[0]);
 		return 7;
 	}
 	int goal = (int) strtol(argv[2], NULL, 10);
 	if (!goal) { // The formule isn't an integer
-		fputs("La formule doit être atomic sous forme d'un entier !\n", stderr);
+		fputs("La formule doit être un littéral sous forme d'un entier !\n", stderr);
 		return 5;
 	}
 	char * buffer = NULL;
@@ -24,7 +24,7 @@ int main(int argc, char * argv[]){
 	regcomp(&regexp, "([0-9]+)[ \\t]+([0-9]+)", REG_EXTENDED); // To get the literals and the clauses
 	FILE * KB = fopen(argv[1], "r"); // Knowledge base file in CNF format
 	if (KB == NULL) {
-		fprintf(stderr, "Impossible de lire le fichier %s !\n", argv[1]);
+		fprintf(stderr, "Impossible de trouver le fichier %s !\n", argv[1]);
 		return 1;
 	}
 	getline(&buffer, &size, KB); // The header
@@ -50,7 +50,7 @@ int main(int argc, char * argv[]){
 			if (!found) symbols++;
 			KB = fopen(argv[1], "r");
 			if (KB == NULL) {
-				fprintf(stderr, "Impossible de lire le fichier %s !\n", argv[1]);
+				fprintf(stderr, "Impossible de trouver le fichier %s !\n", argv[1]);
 				return 1;
 			}
 			getline(&buffer, &size, KB);
