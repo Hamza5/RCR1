@@ -6,16 +6,55 @@
 \usepackage{lmodern}
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsthm}
-\author{Hamza Abbad}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{array,multirow,graphicx}
+\usepackage{rotating}
+\usepackage[table]{xcolor}
+\usepackage[hyperpageref]{backref}
+\usepackage{bidi}
+\newcommand{\spheading}[2][10em]{% \spheading[<width>]{<stuff>}
+  \rotatebox{90}{\parbox{#1}{\raggedright #2}}}
+  \usepackage{url}
+\author{ABBAD Hamza  \and ZEBOUCHI Ahmed}
+
 \title{Les modes de représentation des connaissances}
 \newtheorem{example}{Exemple}
 \begin{document}
 \maketitle
+
 \chapter{\'Etat de l'art}
 \section{Introduction}
 La représentation des connaissances est un des domaines de l'intelligence artificielle. Elle consiste à modéliser
 les connaissances acquisent du monde réel sous forme de concepts et de relations pour qu'elles puissent être
 implémentées sous machine. Cette modélisation est souvent incomplete et non précise.\cite{WKR}
+\section{Historique}
+\'A la fin du 19ème siècle, Frege a introduit la logique mathématique, ce qui a donné un premier pas vers des outils du développement de mécanisme de raisonnement.  Puis la publication de Turing en 1950 qui avait l’idée qu’une machine peut raisonner  l’article "ComputingMachnery and Intelligence" qui débute ainsi: "Les machines peuvent-elles penser?"\paragraph{\normalfont
+C'est également dans les années 50 (1956) que le terme d'intelligence artificielle est proposé par
+John Mc Carthy, Et en 1969, Mc Carthy propose un manipulateur de faits capable de répondre à certaines questions concernant son domaine de représentation.}
+\paragraph{\normalfont
+Avant de faire un résonnement a une machine il faut d’abord savoir représenter les connaissances et savoir les caractéristiques de chaque méthode de représentation et la quelle est la plus consistante pour un problème donné, pour cella plusieurs chercheurs ont proposé leur propres méthodes et améliorations  à travers le temps, dont nous allons les siter au cours de ce texte.}
+\section{Les connaissances}
+En philosophie, nous trouvons les premières définitions de la connaissance, l'un de ceux les plus reconnus a été fourni par Sir Thomas Hobbes en 1651: la connaissance est la preuve de la vérité, qui doit avoir quatre propriétés: d'abord la connaissance doit être intégré par des concepts; deuxièmement, chaque concept peut être identifié par un nom; troisièmement, les noms peuvent être utilisés pour créer des propositions, et quatrième, concluant ces propositions doivent être (Hobbes, 1969).\paragraph{\normalfont
+Les théories connexionnistes affirment que la connaissance peut être décrite comme un certain nombre de concepts reliés entre eux, chaque concept est relié par les associations, ce sont les racines de la sémantique que les moyens pour la représentation des connaissances (Vygotski, 1986), à savoir, ce que nous savons aujourd'hui que la représentation de la connaissance sémantique.}\paragraph{\normalfont
+LOTH affirme que les connaissances sont représentés dans une langue prise en charge par les principes de la logique symbolique et calculabilité, cette langue est une forme différente celle que nous utilisions pour parler, il est un séparateur dans lequel nous pouvons écrire nos pensées et nous pouvons les valider à l'aide de la logiquesymbolique.}
+\section{La représentation des connaissances}
+Le but de comprendre ce qu’est la connaissance et  quels types de connaissances existent, c’est pour nous permettre d'utiliser dans des systèmes artificiels, cette ambition de longue date a été alimentée par le désir de développer des technologies intelligentes qui permettent aux ordinateurs d'effectuer des tâches complexes, que ce soit pour aider les humains ou parce que les humains ne peuvent pas les exécuter.\paragraph{\normalfont
+La plupart des modèles de représentation de la connaissance ont été conçus pour simuler le cerveau humain et ses processus cognitifs.}
+\section{Les modèles de représentation des connaissances}
+Les types de modèles de représentation utilisés pour les systèmes de connaissances comprennent: distribués, en fonction symbolique, non-symboliques, déclarative, probabilistes, règles, entre autres, chacun d'entre eux est adaptés à un type particulier de raisonnement: inductif, déductif, analogie, enlèvement, etc (Russell AND Norvig, 1995).\paragraph{\normalfont
+Systèmes symboliques sont appelés ainsi parce qu'ils utilisent des représentations compréhensibles humaines basées sur les symboles tels que l'unité de représentation de base, chacun des symboles signifie quelque chose dire, un mot, un concept, une compétence, une procédure, une idée.}\paragraph{\normalfont
+Systèmes non symboliques utilisent des machines représentations compréhensibles en fonction de la configuration des éléments, tels que des nombres ou des noeuds pour représenter une idée, un concept, une compétence, un mot, les systèmes non symboliques sont également connus comme système distribué.}\paragraph{\normalfont
+Systèmes symboliques comprennent des structures telles que les réseaux sémantiques, des systèmes de règles sur la base et les cadres, alors que les systèmes distribués comprennent différents types de neurones ou réseaux probabilistes.}\paragraph{\normalfont
+Les réseaux sémantiques comme leur nom indique, sont des réseaux de concepts où les concepts sont représentés sous forme de nœuds et les associations sont représentés comme des arcs (Quillian, 1968), ils peuvent être définis comme un équivalent graphique pour la logique propositionnelle (Gentzen, 1935).Dans les réseaux sémantiques, les associations ont un grade qui représente la connaissance ou la force de l'association; l'apprentissage est représenté par l'augmentation de la qualité de l'association ou la création de nouvelles associations entre les concepts.}\paragraph{\normalfont
+Les systèmes basés sur règle sont des modèles de représentation symboliques axés sur les connaissances procédurales, ils sont généralement organisés comme une bibliothèque de règles sous la forme d'état - l'action, par exemple, si la réponse est trouvée, arrêter d'autre continuer à chercher, Les systèmes de règles se sont révélées être un moyen puissant de représenter les compétences, l'apprentissage et la résolution de problèmes (Newell et Simon, 1972, Anderson, 1990), les systèmes de règles à base sont fréquemment utilisés lorsque la connaissance procédurale est présent.}\paragraph{\normalfont
+Les réseaux de neurones sont le type le plus populaire des modèles de représentation des connaissances distribuées, au lieu d'utiliser un symbole pour représenter un concept qu'ils utilisent un modèle d'activation sur et tout le réseau. Ce modèle d'activation peut être utilisé ensuite pour identifier un concept ou une idée; donc si une petite partie spécifique du concept est perdu, est ne porte pas atteinte à l'idée générale, car ce qui importe est le schéma global. Les humains ont un certain nombre de neurones connectés dans une structure très complexe, chaque fois qu'une personne pense des milliers ou des millions de neurones dans une partie localisée d’un cerveau.}\paragraph{\normalfont
+Pendant les années 70 à 80, c'est l'époque des travaux sur la modélisation informatique des processus de résolution de problème (Newell et Simon, 1972; Winograd, 1975; Anderson, 1976). La dichotomie entre "savoirs" et "savoir-faire" se résume alors dans l'opposition désormais classique entre "connaissances déclaratives" et "connaissances procédurales". Par analogie avec les langages informatiques, elle résume la différence fonctionnelle qui existe entre le fait d'utiliser un langage pour décrire les relations entre les états d'un problèmeou pour prescrire des transformations entre états.Les connaissances procédurales sont prescriptives et spécifiques dans leur usage, les connaissances déclaratives, quant à elles, sont descriptives et indépendantes des usages \cite{BLO}.}\paragraph{\normalfont
+En tant qu'outil de représentation des connaissances, les techniques orienté objet présentent un intérêt bien connu. Elles sont particulièrement adaptées pour exprimer des connaissances dans les systèmes qui sont intrinsèquement basée sur un modèle. Pour cela  cette technique est  utilisé intensivement pour modéliser les connaissances dans notre réseau de Dantès dépannage système expert. (Pour une description de Dante, voir [Mathonet et al .., 1987]).}\paragraph{\normalfont
+Dans l'un des documents plus séminaux dans l'histoire de la représentation des connaissances, Marvin Minsky en 1975 a suggéré l'idée d'utiliser des groupes orientés objet de procédures visant à reconnaître et à faire face à des situations nouvelles. Minsky utilisé le cadre à long terme pour la structure de données utilisée pour représenter ces situations.}\paragraph{\normalfont
+Tant dans le domaine de l'intelligence artificielle que dans celui du génie logiciel, la programmation orientée objets connaît, à l'heure actuelle, un succès croissant car elle répond à certains besoins actuels : facilité pour tester, pour améliorer, pour réutiliser et pour maintenir. Le langage Simula 67, conçu par Ole-Johan Dahl et Krysten Nygaard en 1967 [Dahl AND al 70], est à l'origine des langages orientés objet. Simula introduit le terme d'objet pour qualifier un appel de procédure en attente d'exécution. Un objet est ainsi une instance d'une procédure dont l'appel est suspendu et la notion de classe permet d'allouer dynamiquement les processus envisagés tout en associant à chaque classe des règles de comportement.(Christine Jouve)}\paragraph{\normalfont
+}
+\cite{NRB}
 
 \section{Les modèles de représentation}
 Depuis l'apparition de la science de l'intelligence artificielle et jusqu'à aujourd'hui, un grand nombre de modèles
@@ -109,6 +148,81 @@ connaissances.\cite{KRC}
 Dans ce type, les connaissances sont générées par l'application des procédures sur les éléments des domaines d'informations.
 Elles sont représentées par des petits programmes qui font des tâches bien spécifiées.\cite{KRC}
 
+\chapter{Comparaison des modes de représentation}
+Avec cela, nous concluons par analyser les avantages et les inconvénients de chacune de ces méthodes.
+\setlength{\voffset}{-0.75in}
+\setlength{\headsep}{5pt}
+\FloatBarrier
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1cm}|p{11cm}|}
+\hline
+\multicolumn{2}{ |c| }{Avantage et inconvénient de modes de Connaissances} \\ \cline{2-2}
+\hline
+\parbox[t]{4mm}{\multirow{2}{*}{\rotatebox[origin=c]{90}{Relationnelles}}}
+ & \cellcolor{blue!7}\rule{0pt}{4ex}  La possibilité de formuler une description logiqueet non-fonctionnels descriptions numériques. La nouveauté de cette approche consiste à inclure une description non fonctionnelle dans l'expression logique.
+\\ \cline{2-2}
+\multicolumn{1}{ |c|  }{}  &\cellcolor{red!7}
+\rule{0pt}{4ex}
+Plus d'expériences et de recherches sont nécessaires, l'approche présentée peut être appliquée que pour les systèmes statiques
+Par conséquent, les systèmes dynamiques doivent être considérés et système d'apprentissageincrémental (en ligne) devraient être développés
+\\ \hline\parbox[t]{4mm}{\multirow{2}{*}{\rotatebox[origin=c]{90}{Héritables}}} &\rule{0pt}{6ex}\cellcolor{blue!7} Un moyen d'usage général pour représenter connaissances et permettant son traitement.
+Intégration d'une variété de techniques de gestion des connaissances
+Une autre application importante de l'approche est  dans le développement d'interfaces.
+ \\ \cline{2-2}\multicolumn{1}{ |c|  }{}  &\cellcolor{red!7}\rule{0pt}{4ex}
+  Manque de puissance expressive, Implémentation couteuse en temps représentation qui varie d’un personne a un autre, chaque développeurs a sa propre stratégie de représentation.
+
+
+ \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+
+\begin{tabular}{|p{2cm}|p{11cm}|}
+\hline
+\multicolumn{2}{ |c| }{Avantage et inconvénient de modes de Connaissances} \\ \cline{2-2}
+\hline
+\parbox[t]{4mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Procédurales}}}
+&\cellcolor{blue!7} \rule{0pt}{4ex}La facilité apportée par ce formalisme pour représenter les connaissances de nature heuristique
+et le raisonnement des systèmes procéduraux est parfaitement guidé :   \par ils ne peuvent pas utiliser des connaissances inadéquates ou suivre un mauvais cheminement.
+Ce raisonnement bien dirigé évite une recherche, éventuellement longue et coûteuse, entre les diverses actions possibles comme c'est le cas, par exemple, pour les systèmes de production (plusieurs règles activables pour résoudre un même but)
+\\ \cline{2-2}
+\multicolumn{1}{ |c|  }{}  &\cellcolor{red!7}
+\rule{0pt}{4ex}
+Cette représentation ne permet pas de construire un système flexible puisque les informations sont spécifiées avec un mode prédéfini d'utilisation. L’utilisation des informations est trop déterministe.
+Elle n'est pas modulaire et par conséquent ne facilite pas l'extension ou la modification du système.
+Les systèmes procéduraux ne sont pas toujours cohérents. Par exemple, l'utilisation du raisonnement par défaut peut introduire une incohérence dans le cas de connaissances incomplètes.
+beaucoup de systèmes procéduraux ne sont pas complets, c'est à dire que dans certains cas, le système peut connaître tous les faits nécessaires pour accomplir un certain but mais ne pas être assez puissant pour réaliser les déductions souhaitables.
+Un tel système peut difficilement expliquer le raisonnement qu'il a suivi car il ne contient pas de connaissances sur son mode de raisonnement et sur ses connaissances.
+\\ \hline
+\parbox[t]{4mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Déclaratives}}}
+&\rule{0pt}{4ex} \cellcolor{blue!7}Elles assurent une grande économie pour la mémoire du système
+puisque chacune d'elles peut être utilisée pour répondre à des demandes très variées.
+Facilitée de la modification et de l’automatisation.
+\\ \cline{2-2}
+\multicolumn{1}{ |c|  }{}  &\cellcolor{red!7}
+\rule{0pt}{4ex} Difficulté de passage entre la représentation procédurale et déclarative qui consene la communication de l’information \cite{CJV}\\   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{1cm}|p{11cm}|}
+\hline
+\multicolumn{2}{ |c| }{Avantage et inconvénient de modes de Connaissances} \\ \cline{2-2}
+\hline
+\parbox[t]{4mm}{\multirow{2}{*}{\rotatebox[origin=c]{90}{Inférentielles}}} &\cellcolor{blue!7}
+Précision et généralité des outils de représentation du sens\rule{0pt}{10ex}
+\\ \cline{2-2}\multicolumn{1}{ |c|  }{}  &\rule{0pt}{4ex}\cellcolor{red!7}
+Faiblesse des opérations inférentielles dont elles peuvent rendre compte, au regard de ce qu’infèrent les lecteurs humains.
+\\   \hline
+\end{tabular}
+\end{table}
+\FloatBarrier
+
 \begin{thebibliography}{9}
 \bibitem{WKR}
 R. Davis, H. Shrobe, et P. Szolovits,
@@ -118,6 +232,28 @@ AI Magazine, 14(1):17-33, 1993
 \bibitem{KRC}
 RC Chakraborty,
 \emph{Knowledge Representations}.
-AI Course Lecture 15 – 22, notes, slides. Juin 2010 
+AI Course Lecture 15 – 22, notes, slides. Juin 2010
+
+\bibitem{CJV}
+RC Chakraborty,
+\emph{Representation des connaissances pour les problemes de
+conception. Application a un systeme a base de
+connaissances pour la conception de reseaux
+informatiques : NEST.
+}.
+Christine Jouve, 10 Jun 2013
+
+\bibitem{BLO}
+Gregor Mendel,
+\emph{Procédural versus déclaratif et l'analogie avec les langages informatiques}.
+Sorbonne 01 FEB 95
+
+\bibitem{NRB}
+\emph{A General Knowledge Representation
+Model of Concepts}
+Carlos Ramirez and Benjamin Valdes
+Tec of Monterrey Campus Queretaro, DASL4LTD Research Group
+Mexico
+
 \end{thebibliography}
 \end{document}
